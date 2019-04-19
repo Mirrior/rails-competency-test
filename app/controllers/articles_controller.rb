@@ -9,7 +9,9 @@ class ArticlesController < ApplicationController
   end
 
   def home
-    @articles = Article.all
+    @web_development_articles = Article.web_development.first(3)
+    @local_news_articles = Article.local_news.first(3)
+    @world_news_articles = Article.world_news.first(3)
   end
 
   # GET /articles/1
@@ -87,11 +89,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :user_id)
-    end
-
-    def category
-      Article.category
+      params.require(:article).permit(:title, :content, :user_id, :category)
     end
 
     def article_created_by_current_editor?
