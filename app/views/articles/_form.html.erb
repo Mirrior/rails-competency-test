@@ -21,6 +21,20 @@
     <%= form.text_area :content, id: :article_content %>
   </div>
 
+  <div class="field">
+    <%= form.radio_button :category, 'unassigned' %>
+    <%= form.label :category, 'Unassigned' %>
+
+    <%= form.radio_button :category, 'web_development' %>
+    <%= form.label :category, 'Web Development' %>
+
+    <%= form.radio_button :category, 'local_news' %>
+    <%= form.label :category, 'Local News' %>
+
+    <%= form.radio_button :category, 'world_news' %>
+    <%= form.label :category, 'World News' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
