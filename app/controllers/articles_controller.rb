@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :guest_redirect, only: [:show]
-  access all: [:index, :home], user: {except: [:new, :create, :edit, :update, :destroy]}, editor: :all
+  access all: [:index, :home], user: [:show], editor: :all
   # GET /articles
   # GET /articles.json
   def index
