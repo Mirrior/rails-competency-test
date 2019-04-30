@@ -52,3 +52,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'petergate'
 gem "minitest-rails"
+gem 'slim', '~> 4.0', '>= 4.0.1'
