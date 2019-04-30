@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe ArticlesController do
-include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
 
   let(:article) { articles :one }
   let(:editor)  { users :editor  }

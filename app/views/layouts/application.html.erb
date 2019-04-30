@@ -11,6 +11,9 @@
   <body>
     <%= link_to "Home", root_path %>
     <%= login_helper %>
+    <% if current_user.role == :admin %>
+      <%= link_to "Admin", admin_index_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
