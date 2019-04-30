@@ -1,0 +1,33 @@
+= form_with(model: article, local: true) do |form|
+  - if article.errors.any?
+    div id="error_explanation"
+      h2 = pluralize(article.errors.count, "error")
+      | prohibited this article from being saved:
+
+      ul
+      - article.errors.full_messages.each do |message|
+        li = message
+
+  div class="field"
+    = form.label :title
+    = form.text_field :title, id: :article_title
+
+  div class="field"
+    = form.label :content
+    = form.text_area :content, id: :article_content
+
+  div class="field"
+    = form.radio_button :category, 'unassigned'
+    = form.label :category, 'Unassigned'
+
+    = form.radio_button :category, 'web_development'
+    = form.label :category, 'Web Development'
+
+    = form.radio_button :category, 'local_news'
+    = form.label :category, 'Local News'
+
+    = form.radio_button :category, 'world_news'
+    = form.label :category, 'World News'
+
+  div class="actions"
+    = form.submit

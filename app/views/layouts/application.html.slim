@@ -1,0 +1,18 @@
+doctype html
+html
+   head
+     title RailsCompetencyTest
+     = csrf_meta_tags
+
+     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+   body
+     = link_to "Home", root_path
+     |  
+     = login_helper
+     |  
+     - if current_user.role == :admin
+       = link_to "Admin", admin_index_path
+
+     == yield

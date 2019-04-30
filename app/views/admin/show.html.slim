@@ -1,0 +1,17 @@
+p id="notice" = notice
+
+p
+  strong Email:
+  |  
+  = @user.email
+
+
+p
+  strong Role:
+  |  
+  = @user.role
+
+
+= link_to 'Edit', edit_admin_path(@user)
+| | 
+= link_to 'Back', admin_index_path

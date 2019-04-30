@@ -1,0 +1,27 @@
+p id="notice" = notice
+
+h1 User
+
+table
+  thead
+    tr
+      th Email
+      th Roles
+      th colspan="2"
+
+
+
+  tbody
+    - @users.each do |user|
+      tr 
+        td = user.email
+        td = user.role
+        td = link_to 'Show', admin_path(user)
+        td = link_to 'Edit', edit_admin_path(user)
+
+
+
+
+
+br
+= link_to 'New User', new_admin_path
